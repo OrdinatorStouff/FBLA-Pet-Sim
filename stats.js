@@ -3,7 +3,29 @@ const CLEANESS_BAR = 100;
 const HAPPY_BAR = 100;
 
 function main() {
-    let soap = readString("Select a soap:" \n + "Puppy Paradise or Cosmic Kitten?");
+    let amountOfMoney = readInt("How much money do you have? 1-10 only. ");
+
+    for (let i = 0; i <= amountOfMoney;) {
+        let listOfItems = readInt("Choose Items choose there numbers")
+
+        if (listOfItems == 1) {
+            i -= 1;
+        } else if (listOfitems == 2) {
+
+        } else if (listOfitems == 3) {
+            
+        } else if (listOfitems == 4) {
+            
+        }else if (listOfitems == 5) {
+            
+        }else if (listOfitems == 6) {
+            
+        }
+    }
+    
+    
+    
+    let soap = readString("Select a soap: \n Puppy Paradise or Cosmic Kitten?");
 
 
 
@@ -20,3 +42,5 @@ function main() {
     }
 
 }
+
+main();
