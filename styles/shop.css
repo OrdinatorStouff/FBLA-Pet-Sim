@@ -1,0 +1,46 @@
+body {
+    background-color:#B88647;
+    
+}
+
+a {
+   height:100px;
+   margin-left:5%;
+   color:yellow;
+   background-color:grey;
+}
+
+
+#shopFormat {
+    height:100vh;
+    background-color:#B88647;
+    
+}
+
+.shoplayer {
+    background-color:#B88647;
+    height:33%;
+    display:flex;
+    justify-content:center;
+    align-content:center;
+    align-items:center;
+    gap:20%;
+}
+
+.shoplayer > button {
+    height:80%;
+    background-color:#7fdb8e;
+    width:50%;
+    border-bottom:20px solid #298538;
+    
+}
+button > p {
+    font-size:200%;
+}
+.itemTitle {
+    font-size:300%;
+    
+    
+
+}
+

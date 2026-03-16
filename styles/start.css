@@ -1,0 +1,62 @@
+#startFormat {
+    display:flex;
+    height:100vh;
+    gap:2%;
+    
+    flex-direction:column;
+}
+#startImg {
+    background-color:red;
+    width:100%;
+    height:50%;
+}
+
+
+#startIcons {
+    width:100%;
+    height:50%;
+    
+    
+    
+    text-align:center;
+}
+button {
+    height:40%;
+    
+    
+    font-size:400%;
+    font-family:monospace;
+    width: 45%;
+    margin-left: 2%;
+    background-color: black;
+    color: white;
+}
+
+
+#startStats {
+    margin-top:5%;
+    height:50%;
+    display:flex;
+    flex-direction:column;
+    gap:4%;
+    text-align:center;
+    font-size:400%;
+    font-family:monospace;
+}
+.statBar1 {
+    background-color:red;
+    border-radius:10%;
+    height:33%;
+}
+
+.statBar2 {
+    background-color:green;
+    border-radius:10%;
+    height:33%;
+}
+
+.statBar3 {
+    background-color:blue;
+    border-radius:10%;
+    height:33%;
+}

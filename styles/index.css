@@ -1,0 +1,46 @@
+
+html {
+    background-color:cadetblue;
+}
+#startDiv {
+    margin-top:30%;
+    display:grid;
+    
+    align-content:center;
+    justify-content:center;
+    height:100vh;
+    gap:5%;
+    
+    
+    
+    
+    
+}
+#startTitle {
+    text-align:center;
+    font-size:300%;
+    background-image:linear-gradient(to top right, red, yellow);
+    color:rgb(109, 7, 7);
+    
+}
+
+#startImg {
+    width:90%;
+    margin-left:5%;
+    background-color:red;
+
+}
+
+#startLine {
+    width:100%;
+    height:10px;
+    background-color: white;
+    border:4px solid black;
+}
+#startBut {
+  
+   
+   margin-top:20em;
+   height:100px;
+   
+}

@@ -1,0 +1,25 @@
+#actFormat {
+    display:flex;
+    flex-direction:column;
+    border:4px solid red;
+    height:100vh;
+    gap:2%;
+}
+
+#actFormat > button {
+    display:flex;
+    flex-direction:column; 
+    
+    justify-content:center;
+    height: 25%;
+    font-size:100%;
+}
+
+.actName {
+    font-size:200%;
+    position:relative;
+}
+
+#shop {
+    background-color:yellow;
+}
