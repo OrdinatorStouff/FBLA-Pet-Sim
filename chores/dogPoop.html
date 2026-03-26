@@ -2,13 +2,24 @@
 <html>
     <head>
         <title>Pet Sim Activities</title>
-        <link rel="stylesheet" type="text/css" href="../styles/activities.css">
+        
+        
+        
+        <style>
+            .dogPoopCanvas {
+                background-color: green;
+                width: 500px;
+                height:500px;
+            }
+
+
+        </style>
     </head>
     
     
     
-    <body>
-        
+    <body id="body">
+       
 
     </body>
 
@@ -16,6 +27,50 @@
 
 
     <script>
+        const NUM_CIRCLES = 30;
+        const DELAY = 1000;
+        const MIN_RADIUS = 40;
+        const MAX_RADIUS = 50;
+        
+        let dopPoop = document.createElement("div");
+        let canvas = document.createElement("div");
+        canvas.style.class = "dogPoopCanvas";
+        
+        let body = document.getElementById("body");
+        body.appendChild(canvas);
+        
+
+        function dogPoopGame() {
+            createPoops();
+
+            setTimer(createPoops, DELAY);
+        }
+
+        function createPoops() {
+            removeAll();
+            for (let i = 0; i < NUM_SECONDS; i++) {
+                poopStyle();
+            }
+
+        }
+        
+        function poopStyle() {
+            let dogPoop = new Image("https://images.vexels.com/media/users/3/236374/isolated/preview/c5a60ab0500a663785ee20364abef437-simple-poop-emoji-filled-stroke.png");
+        
+        
+            var randRadius = Randomizer.nextInt(MIN_RADIUS, MAX_RADIUS);
+            dogPoop.setSize(randRadius, randRadius);
+            let x = Randomizer.nextInt(randRadius, getWidth() - dogPoop.getWidth());
+            let y = Randomizer.nextInt(randRadius, getHeight() - dogPoop.getHeight());  
+            
+            canvas.appendChild(dogPoop); 
+        }
+        
+
+        
+        
+        
+        
         //dogPoop.js, the variable poopEmoji will be a div
         // create a div to be a container for the other div to move around 500px by 500px canvas?
         // poopEmoji variable is a div (document.createElement("div")) then assign it to be a image so the div can actually move around
