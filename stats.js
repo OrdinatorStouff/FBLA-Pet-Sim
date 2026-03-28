@@ -7,7 +7,7 @@ function main() {
     // variable to name the dog and keep it const
     let amountOfMoney = readInt("How much money do you have? 1-10 only. ");
 
-    for (let i = 0; i <= amountOfMoney;) {
+    for (let i = amountOfMoney; i >= 0;) {
         let listOfItems = readInt("Choose an Item: \n 1. Puppy Paradise. 2. Cosmic Kitten. 3. Carrot Food. 4. Meat Food. 5. Tennis Ball. 6. rope.");
 
         if (listOfItems == 1) {

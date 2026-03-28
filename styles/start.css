@@ -1,3 +1,16 @@
+html {
+    background-color:cadetblue;
+}
+
+
+#back {
+    height:2em;
+    background-color:lightblue;
+    color:black;
+    text-decoration:none;
+    margin-bottom:2%;
+}
+
 #startFormat {
     display:flex;
     height:100vh;
@@ -32,6 +45,13 @@ button {
     color: white;
 }
 
+button > #links1 {
+    font-size:60%;
+    text-align:center;
+    color:white;
+    text-decoration:none;
+}
+
 
 #startStats {
     margin-top:5%;
@@ -45,18 +65,19 @@ button {
 }
 .statBar1 {
     background-color:red;
-    border-radius:10%;
+    border-radius:5%;
     height:33%;
 }
 
 .statBar2 {
     background-color:green;
-    border-radius:10%;
+    border-radius:5%;
     height:33%;
 }
 
 .statBar3 {
     background-color:blue;
-    border-radius:10%;
+    border-radius:5%;
     height:33%;
 }
+

@@ -4,10 +4,11 @@ body {
 }
 
 a {
-   height:100px;
-   margin-left:5%;
-   color:yellow;
-   background-color:grey;
+    height:2em;
+    background-color:lightblue;
+    color:black;
+    text-decoration:none;
+    margin-bottom:2%; 
 }
 
 
