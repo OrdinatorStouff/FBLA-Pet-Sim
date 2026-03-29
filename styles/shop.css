@@ -1,14 +1,20 @@
 body {
     background-color:#B88647;
-    
+    font-family:monospace;
 }
 
-a {
-    height:2em;
+#back {
+    height:10%;
+    font-size:150%;
+    border-radius:10%;
+    margin-left:3%;
+    width:min-content;
+    height:min-content;
+    padding:3%;
     background-color:lightblue;
     color:black;
     text-decoration:none;
-    margin-bottom:2%; 
+    margin-bottom:2%;
 }
 
 
@@ -25,7 +31,7 @@ a {
     justify-content:center;
     align-content:center;
     align-items:center;
-    gap:20%;
+    gap:10%;
 }
 
 .shoplayer > button {
@@ -36,10 +42,12 @@ a {
     
 }
 button > p {
-    font-size:200%;
+    font-size:150%;
+    position:relative;
 }
 .itemTitle {
-    font-size:300%;
+    font-size:auto;
+    background-color:yellow;
     
     
 

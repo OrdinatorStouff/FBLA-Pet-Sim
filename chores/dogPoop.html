@@ -6,65 +6,165 @@
         
         
         <style>
+            
+            
             .dogPoopCanvas {
-                background-color: green;
-                width: 500px;
-                height:500px;
+                background-color: rgb(0, 219, 0);
+                width: 100%;
+                height:100vh;
+                position:relative;
+                
             }
+            
+             
+            .ScoreDisplay {
+                
+                border:4px solid black;
+                background:yellow;
+                padding:5px;
+                color:black;
+                
+                position:absolute;
+                top: 10px;
+                left: 10px;
+                z-index: 10;
 
+                font-family:monospace;
+                font-size:300%;
+            }
+            .gameOverScreen {
+                width:100%;
+                height:100vh;
+                background:white;
+                
+                display:flex;
+                align-content:center;
+                align-items:center;
+                justify-content:center;
+                flex-direction:column;
+                font-size:300%;
+            }
+            .back {
+                height:8%;
+                font-size:50%;
+                border-radius:10%;
+                margin-left:3%;
+                
+                height:min-content;
+                padding:3%;
+                background-color:lightblue;
+                color:black;
+                text-decoration:none;
+                margin-bottom:2%;
 
+            }
         </style>
     </head>
     
-    
-    
     <body id="body">
-       
-
+        
     </body>
 
-
-
-
     <script>
-        const NUM_CIRCLES = 30;
+        const NUM_SECONDS = 15;
         const DELAY = 1000;
-        const MIN_RADIUS = 40;
-        const MAX_RADIUS = 50;
-        
+        const MIN_RADIUS = 50;
+        const MAX_RADIUS = 70;
+        // defining all the variables at the start and assigning them values
         let dopPoop = document.createElement("div");
         let canvas = document.createElement("div");
-        canvas.style.class = "dogPoopCanvas";
+        //Variables for score
+        let scoreDisplay = document.createElement("div");
+        let scoreValue = 0;
+        scoreDisplay.innerHTML = "Your score is " + scoreValue;
+       
+        let poopCount = 0;  
+        let currentPoop = null;
         
-        let body = document.getElementById("body");
+        let gameOver = document.createElement("div");
+       
+
+
+        //Button on Game OVer screen that takes you back 
+        let backLink = document.createElement("a");
+        backLink.className = "back";
+        backLink.innerHTML = "Back To Menu";
+        backLink.href = "../mainPages/start.html";
+        
+        gameOver.className = "gameOverScreen";
+       
+        canvas.className = "dogPoopCanvas";
+        scoreDisplay.className = "ScoreDisplay";
+        
+        let bodyStyle = document.getElementById("body");
+        
+        // Makes sure everything shows up on the screen
+        canvas.appendChild(scoreDisplay);
         body.appendChild(canvas);
         
-
+        //Performs and repeats the code that randomly generate poops
         function dogPoopGame() {
-            createPoops();
-
-            setTimer(createPoops, DELAY);
-        }
-
-        function createPoops() {
-            removeAll();
-            for (let i = 0; i < NUM_SECONDS; i++) {
-                poopStyle();
-            }
-
-        }
-        
-        function poopStyle() {
-            let dogPoop = new Image("https://images.vexels.com/media/users/3/236374/isolated/preview/c5a60ab0500a663785ee20364abef437-simple-poop-emoji-filled-stroke.png");
-        
-        
-            var randRadius = Randomizer.nextInt(MIN_RADIUS, MAX_RADIUS);
-            dogPoop.setSize(randRadius, randRadius);
-            let x = Randomizer.nextInt(randRadius, getWidth() - dogPoop.getWidth());
-            let y = Randomizer.nextInt(randRadius, getHeight() - dogPoop.getHeight());  
             
-            canvas.appendChild(dogPoop); 
+            //Right here
+            //Show how many points and how much money you earned 
+            
+
+            function spawnPoop() {  
+                if (poopCount >= NUM_SECONDS) {
+                    canvas.innerText = "";
+                    
+                    let moneyGained = Math.floor(scoreValue / 2);
+                    gameOver.innerHTML = "Game Over!<br>You won " + moneyGained + " Doggy Dollars<br>";
+                    
+                    gameOver.appendChild(backLink);
+                    canvas.appendChild(gameOver);
+                    return;
+                }
+                
+                if (currentPoop) {
+                    currentPoop.remove();
+                }
+                currentPoop = poopStyle();
+                poopCount++;  
+                setTimeout(spawnPoop, DELAY);
+                
+                 
+                
+            } 
+            
+            
+            spawnPoop();
         }
+
+        
+        // Randomly generates poops and puts it on the screen
+        function poopStyle() {
+            let dogPoop = document.createElement("img");
+            dogPoop.src = "https://images.vexels.com/media/users/3/236374/isolated/preview/c5a60ab0500a663785ee20364abef437-simple-poop-emoji-filled-stroke.png";
+        
+            dogPoop.style.position = "absolute";
+
+            var randRadius = Math.floor(Math.random() * (MAX_RADIUS - MIN_RADIUS)) + MIN_RADIUS;
+            dogPoop.style.width = randRadius + "px";
+            dogPoop.style.height = randRadius + "px";
+            let x = Math.random() * ( canvas.clientWidth - randRadius);
+            let y = Math.random()* ( canvas.clientHeight - randRadius);  
+            
+            dogPoop.style.left = x + "px";
+            dogPoop.style.top = y + "px";
+            
+            dogPoop.addEventListener("click", increaseScore);
+            canvas.appendChild(dogPoop);
+
+            return dogPoop;
+            
+        }
+        function increaseScore() {
+            scoreValue++;
+            
+            scoreDisplay.innerText = "Your Score is: " + scoreValue;
+        }
+        dogPoopGame();
         
 
         
