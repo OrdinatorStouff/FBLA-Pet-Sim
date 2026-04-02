@@ -1,8 +1,12 @@
 html {
-    background-color:cadetblue;
+    background-color:black;
     font-family:monospace;
 }
-
+body {
+    width:450px;
+    margin: 0 auto;
+    background-color:cadetblue;
+}
 #actFormat {
     display:flex;
     flex-direction:column;
